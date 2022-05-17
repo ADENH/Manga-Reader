@@ -43,6 +43,7 @@ class MyComicAdapter(internal val context: Context, internal val mangaList: Comi
     }
 
     override fun onBindViewHolder(holder: MyComicAdapter.MyViewHolder, position: Int) {
+
         Picasso.get().load(mangaList.data[position].thumbnailUrl).into(holder.comic_image)
         holder.comic_title.text = mangaList.data[position].title
         holder.setClick((object :IRecyclerOnClick{

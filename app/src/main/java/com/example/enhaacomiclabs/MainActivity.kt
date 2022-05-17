@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         //Default, load first time
         swipe_refresh.post {
             if(Common.isConnectedToInternet(baseContext)) {
-                fetchBanner()
+//                fetchBanner()
                 fetchComic()
             }else{
                 Toast.makeText(baseContext,"Please Check Your Internet Collection",Toast.LENGTH_SHORT).show()
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchComic() {
+    private fun fetchBanner() {
         compositeDisposable.add(iComicAPI.popularComic
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun fetchBanner() {
+    private fun fetchComic() {
         var dialog = SpotsDialog.Builder()
             .setContext(this)
             .setMessage("Please wait...")

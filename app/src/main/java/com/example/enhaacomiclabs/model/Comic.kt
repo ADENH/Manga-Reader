@@ -1,12 +1,14 @@
 package com.example.enhaacomiclabs.model
 
+import com.google.gson.annotations.SerializedName
+
 class Comic {
     var title:String?=null
-    var typeComic:String?=null
+    @SerializedName("type_comic") var typeComic:String?=null
     var chapter:String?=null
     var rating:String?=null
-    var comicUrl:String?=null
-    var thumbnailUrl:String?=null
+    @SerializedName("comic_url") var comicUrl:String?=null
+    @SerializedName("thumbnail_url") var thumbnailUrl:String?=null
 
     constructor(){
 
